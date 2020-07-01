@@ -5,7 +5,7 @@ This is based on paper [Use of the Hough Transformation To Detect Lines and Curv
 ## Hough Space
 A line can be represented in Cartesian Space by the following equation,\
 &nbsp; &nbsp; &nbsp; &nbsp; y = m * x + b &nbsp; &nbsp; &nbsp; &nbsp; where, m = gradient / slope of line.\
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b = y-intercept.\
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; b = y-intercept.\
 So given some set of points in binary image we can find lines connecting these points in Image Space. Lines in Cartesian Image Space will intersect at a point in m - b Parameter Space as shown in the figure.
 
 ![m - b Parameter Space](/images/m-b_space.png)
@@ -18,7 +18,7 @@ A line can be represented in polar form as show in the figure,
 The line from origin with distance rho has a slope of sin(theta) / cos(theta). The line of interest which is perpendicular to it will have negative reciprocal slope i.e. -cos(theta) / sin(theta).\
 The y-intercept of line is sin(theta) = rho / b. Thus inserting m = -cos(theta) / sin(theta) and b = rho / sin(theta) in the equation of line we get,\
 &nbsp; &nbsp; &nbsp; &nbsp; rho = x * cos(theta) + y * sin(theta) &nbsp; &nbsp; &nbsp; &nbsp; where, rho = distance from origin to line.\
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; theta = angle from origin to line.\
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; theta = angle from origin to line.
 														   
 A Hough space is rho - theta space, Lines in Cartesian Image Space will intersect at a point in rho - theta Parameter Space.
 
